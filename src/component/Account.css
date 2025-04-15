@@ -1,0 +1,53 @@
+.account-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  padding-top: 80px; /* Adjust this value to create space below the navbar */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+}
+
+.account-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.account-details h2 {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px; /* Ensure the text is readable */
+  width: 100%; /* Ensure the input takes the full width of the container */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.save-button, .logout-button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.save-button:hover, .logout-button:hover {
+  background-color: #0056b3;
+}

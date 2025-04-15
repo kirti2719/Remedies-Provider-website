@@ -1,0 +1,93 @@
+.level-indicator {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    justify-content: center;
+    padding: 10px;
+  }
+  
+  .level {
+    width: 40px;
+    height: 40px;
+    background-color: #e0e0e0;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .level.active {
+    background-color: #0066cc;
+    box-shadow: 0 4px 8px rgba(0, 102, 204, 0.3);
+    transform: translateY(-2px);
+  }
+  
+  .level:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Different colors for different levels */
+  .level.underweight.active {
+    background-color: #ffd700;
+  }
+  
+  .level.normal.active {
+    background-color: #4CAF50;
+  }
+  
+  .level.overweight.active {
+    background-color: #ff9800;
+  }
+  
+  .level.obese.active {
+    background-color: #f44336;
+  }
+  
+  /* Optional: Add tooltip effect */
+  .level::after {
+    content: attr(data-level);
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: #666;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .level:hover::after {
+    opacity: 1;
+  }
+  
+  /* Animation for active state */
+  .level.active {
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(0, 102, 204, 0.4);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(0, 102, 204, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(0, 102, 204, 0);
+    }
+  }
+  
+  /* Optional: Add media query for smaller screens */
+  @media (max-width: 480px) {
+    .level-indicator {
+      gap: 10px;
+    }
+  
+    .level {
+      width: 30px;
+      height: 30px;
+    }
+  }
+  

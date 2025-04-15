@@ -1,0 +1,299 @@
+.navbar {
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.nav-left .brand img {
+  height: 40px;
+  width: auto;
+}
+
+.nav-elements ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.nav-elements li {
+  margin-left: 30px;
+}
+
+.nav-elements a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-elements a:hover {
+  color: #007bff;
+}
+
+.user-profile {
+  position: relative;
+  cursor: pointer;
+}
+
+.user-circle {
+  width: 40px;
+  height: 40px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.user-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 8px 0;
+  min-width: 150px;
+  display: none;
+}
+
+.user-profile:hover .user-dropdown {
+  display: block;
+}
+
+.user-dropdown a,
+.user-dropdown button {
+  display: block;
+  width: 100%;
+  padding: 8px 16px;
+  text-align: left;
+  border: none;
+  background: none;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}
+
+.user-dropdown button:hover,
+.user-dropdown a:hover {
+  background-color: #f5f5f5;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  background-color: #333;
+  border-radius: 3px;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-elements {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    background-color: white;
+    width: 100%;
+    padding: 20px;
+    display: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-elements.active {
+    display: block;
+  }
+
+  .nav-elements ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-elements li {
+    margin: 10px 0;
+    width: 100%;
+  }
+
+  .user-dropdown {
+    position: static;
+    box-shadow: none;
+    display: none;
+    padding-left: 20px;
+  }
+
+  .user-profile:hover .user-dropdown {
+    display: block;
+  }
+}
+/* Your existing CSS remains the same until the media queries */
+
+/* Desktop/Large Screen Responsive Styles */
+@media (max-width: 1800px) {
+  .nav-container {
+    max-width: 1800px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .nav-container {
+    max-width: 1200px;
+  }
+
+  .nav-elements li {
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .nav-container {
+    max-width: 992px;
+  }
+
+  .nav-elements li {
+    margin-left: 15px;
+  }
+}
+
+@media (max-width: 992px) {
+  .nav-container {
+    max-width: 768px;
+  }
+
+  .nav-elements a {
+    font-size: 14px;
+  }
+}
+
+/* Your existing mobile styles remain the same */
+@media (max-width: 768px) {
+  /* Keep your existing mobile styles */
+}
+
+/* Navbar Base Styles */
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: -100px;
+  left: 0;
+  z-index: 1000;
+  background: linear-gradient(45deg, #e6e6fa, #bcdbe4);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  animation: navbar-slide-in 1s ease-in-out forwards, shimmer 3s infinite alternate;
+}
+
+/* Navbar Slide-In Animation */
+@keyframes navbar-slide-in {
+  from {
+    top: -100px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+/* Shimmer Effect */
+@keyframes shimmer {
+  0% {
+    box-shadow: 0 0 10px rgba(173, 216, 230, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(173, 216, 230, 0.6);
+  }
+}
+
+/* Navbar Links */
+.nav-elements a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 10px 15px;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+/* Glow Effect */
+.nav-elements a:hover {
+  color: goldenrod;
+  text-shadow: 0 0 10px goldenrod;
+  transform: scale(1.1);
+}
+
+/* Underline Effect */
+.nav-elements a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, goldenrod, coral);
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-elements a:hover::after {
+  transform: scaleX(1);
+}
+
+/* User Profile */
+.user-circle {
+  width: 40px;
+  height: 40px;
+  background: peachpuff;
+  color: #5c5c5c;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.user-circle:hover {
+  transform: rotate(360deg) scale(1.1);
+  box-shadow: 0 0 15px peachpuff;
+}
+
+/* Hamburger Menu */
+.hamburger span {
+  background: #333;
+}

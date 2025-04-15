@@ -1,0 +1,305 @@
+.signup-container {
+    display: flex;
+    min-height: 100vh;
+    background: #f5f5f5;
+  }
+  
+  /* Left side - Form */
+  .form-side {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background: #ffffff;
+  }
+  
+  .signup-box {
+    width: 100%;
+    max-width: 400px;
+    padding: 2.5rem;
+    animation: slideIn 0.5s ease-out;
+  }
+  
+  .signup-box h2 {
+    color: #2d3436;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+  }
+  
+  .signup-box > p {
+    color: #636e72;
+    margin-bottom: 2rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #2d3436;
+    font-weight: 500;
+    font-size: 0.9rem;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #dfe6e9;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .form-group input:focus {
+    outline: none;
+    border-color: #6c5ce7;
+    box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.1);
+  }
+  
+  /* Right side - Animation */
+  .animation-side {
+    flex: 1;
+    background: linear-gradient(45deg, #6c5ce7, #a55eea);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .animation-content {
+    text-align: center;
+    color: white;
+    z-index: 1;
+    padding: 2rem;
+  }
+  
+  .animation-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  
+  .animation-content p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+  }
+  
+  /* Floating elements */
+  .floating-elements {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .floating-element {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+  }
+  
+  .element-1 { width: 100px; height: 100px; top: 10%; left: 10%; animation: float 8s infinite; }
+  .element-2 { width: 150px; height: 150px; top: 20%; right: 20%; animation: float 12s infinite; }
+  .element-3 { width: 80px; height: 80px; bottom: 30%; left: 30%; animation: float 10s infinite; }
+  .element-4 { width: 120px; height: 120px; bottom: 20%; right: 15%; animation: float 14s infinite; }
+  
+  /* Button styles */
+  .signup-button {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(45deg, #6c5ce7, #a55eea);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .signup-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
+  }
+  
+  .signup-button:active {
+    transform: translateY(0);
+  }
+  
+  /* Loading state */
+  .loading-spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  
+  .spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s linear infinite;
+  }
+  
+  /* Messages */
+  .error-message,
+  .success-message {
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: slideIn 0.3s ease-out;
+  }
+  
+  .error-message {
+    background: #fff3f3;
+    color: #ff4757;
+    border: 1px solid #ff4757;
+  }
+  
+  .success-message {
+    background: #f0fff4;
+    color: #2ed573;
+    border: 1px solid #2ed573;
+  }
+  
+  /* Login link */
+  .login-link {
+    margin-top: 1.5rem;
+    text-align: center;
+    color: #636e72;
+  }
+  
+  .login-redirect {
+    color: #6c5ce7;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 0.5rem;
+    transition: color 0.3s ease;
+  }
+  
+  .login-redirect:hover {
+    color: #a55eea;
+  }
+  
+  /* Animations */
+  @keyframes float {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(10px, -10px) rotate(5deg); }
+    50% { transform: translate(0, -20px) rotate(0deg); }
+    75% { transform: translate(-10px, -10px) rotate(-5deg); }
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .signup-container {
+      flex-direction: column;
+    }
+  
+    .animation-side {
+      display: none;
+    }
+  
+    .form-side {
+      padding: 1rem;
+    }
+  
+    .signup-box {
+      padding: 1.5rem;
+    }
+  
+    .signup-box h2 {
+      font-size: 2rem;
+    }
+  }
+  
+  /* Input focus states */
+  .form-group input:focus {
+    outline: none;
+    border-color: #6c5ce7;
+    box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.1);
+  }
+  
+  /* Disabled states */
+  .signup-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  .form-group input:disabled {
+    background-color: #f8f9fa;
+    cursor: not-allowed;
+  }
+  
+  /* Custom checkbox */
+  .form-group input[type="checkbox"] {
+    width: auto;
+    margin-right: 0.5rem;
+  }
+  
+  /* Password strength indicator */
+  .password-strength {
+    height: 4px;
+    margin-top: 0.5rem;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+  
+  .strength-weak { background: #ff4757; width: 30%; }
+  .strength-medium { background: #ffa502; width: 60%; }
+  .strength-strong { background: #2ed573; width: 100%; }
+  
+  /* Hover effects */
+  .form-group input:hover {
+    border-color: #a55eea;
+  }
+  
+  .signup-button:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    animation: shine 1s linear;
+  }
+  
+  @keyframes shine {
+    to {
+      left: 100%;
+    }
+  }
+  

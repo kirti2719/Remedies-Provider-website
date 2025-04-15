@@ -1,0 +1,294 @@
+/* General Contact Page Styling */
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    padding-top: 50px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+  
+  /* Light & Dark Theme Support */
+  :root {
+    --bg-color: #ffffff;
+    --text-color: #333;
+    --input-bg: #f9f9f9;
+    --input-border: #ccc;
+  }
+  
+  [data-theme="dark"] {
+    --bg-color: #1e1e1e;
+    --text-color: #f1f1f1;
+    --input-bg: #333;
+    --input-border: #666;
+  }
+  
+  .contact-container.light {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+  
+  .contact-container.dark {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+  
+  /* Left Column - Contact Info */
+  .left-col {
+    flex: 1;
+    max-width: 40%;
+    padding-right: 40px;
+  }
+  
+  .left-col img.logo {
+    width: 150px;
+    margin-bottom: 20px;
+  }
+  
+  .left-col h1, .left-col h2 {
+    margin-bottom: 10px;
+  }
+  
+  .left-col p {
+    margin-bottom: 15px;
+  }
+  
+  /* Right Column - Form Section */
+  .right-col {
+    flex: 1;
+    max-width: 55%;
+    background-color: var(--input-bg);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .right-col h1 {
+    margin-bottom: 20px;
+    font-size: 45px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--input-border);
+    border-radius: 5px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+  }
+  
+  form textarea {
+    resize: none;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Error & Success Messages */
+  .error-msg {
+    color: red;
+    margin-top: 10px;
+  }
+  
+  .success-msg {
+    color: green;
+    margin-top: 10px;
+  }
+  
+  /* Dark Mode Toggle */
+  .theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+    margin-right: 10px;
+  }
+  
+  .theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: #007bff;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(14px);
+  }
+  
+  /* Visme Form Container */
+  .visme-container {
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  .visme-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: var(--input-bg);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Google Map Styling */
+  .info-map-container {
+    margin-top: 30px;
+  }
+  
+  .map iframe {
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .contact-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .left-col, .right-col {
+      max-width: 100%;
+      padding: 0;
+    }
+  
+    .left-col {
+      margin-bottom: 30px;
+    }
+  }
+  /* Right Column - Form Section */
+.right-col {
+    flex: 1;
+    max-width: 55%;
+    background: linear-gradient(135deg, #6aade7, #acc9dd); /* Soft Blue Gradient */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+    border-left: 6px solid #007bff; /* Blue Accent Border */
+    transition: background 0.4s ease-in-out;
+  }
+  
+  /* Dark Mode - Right Column */
+  [data-theme="dark"] .right-col {
+    background: linear-gradient(135deg, #1e1e1e, #3a3a3a); /* Dark Elegant Gradient */
+    border-left: 6px solid #ff9800; /* Orange Accent Border */
+    color: #fff;
+  }
+  /* Left Column - Contact Info */
+.left-col {
+    flex: 1;
+    max-width: 40%;
+    padding-right: 40px;
+    background: linear-gradient(135deg, #f7f3e9, #e5ddd5); /* Soft Beige Gradient */
+    border-radius: 12px;
+    padding: 30px;
+    animation: subtleShiftLeft 8s infinite alternate ease-in-out;
+  }
+  
+  /* Right Column - Form Section */
+  .right-col {
+    flex: 1;
+    max-width: 55%;
+    background: linear-gradient(135deg, #ffffff, #f7f9fc); /* Soft Off-White Gradient */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid #b0c4de; /* Muted Blue Accent */
+    transition: background 0.4s ease-in-out;
+    animation: subtleShiftRight 8s infinite alternate ease-in-out;
+  }
+  
+  /* Dark Mode - Left & Right Column */
+  [data-theme="dark"] .left-col {
+    background: linear-gradient(135deg, #2b2b2b, #3a3a3a); /* Soft Charcoal Gray */
+    animation: subtleShiftLeftDark 8s infinite alternate ease-in-out;
+  }
+  
+  [data-theme="dark"] .right-col {
+    background: linear-gradient(135deg, #1f1f1f, #2c2c2c); /* Subtle Dark Gray */
+    border-left: 4px solid #778899; /* Soft Blue-Gray Accent */
+    color: #e0e0e0;
+    animation: subtleShiftRightDark 8s infinite alternate ease-in-out;
+  }
+  
+  /* Subtle Color Shift Animations */
+  @keyframes subtleShiftLeft {
+    0% { background: linear-gradient(135deg, #f7f3e9, #e5ddd5); }
+    100% { background: linear-gradient(135deg, #ede8df, #dcd3ca); }
+  }
+  
+  @keyframes subtleShiftRight {
+    0% { background: linear-gradient(135deg, #ffffff, #f7f9fc); }
+    100% { background: linear-gradient(135deg, #fcfcfc, #eef2f5); }
+  }
+  
+  /* Dark Mode Animations */
+  @keyframes subtleShiftLeftDark {
+    0% { background: linear-gradient(135deg, #2b2b2b, #3a3a3a); }
+    100% { background: linear-gradient(135deg, #242424, #333333); }
+  }
+  
+  @keyframes subtleShiftRightDark {
+    0% { background: linear-gradient(135deg, #1f1f1f, #2c2c2c); }
+    100% { background: linear-gradient(135deg, #252525, #353535); }
+  }
+  
